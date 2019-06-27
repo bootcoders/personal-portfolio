@@ -2,6 +2,7 @@
 
 
 function persoanl_theme_setup(){
+	load_theme_textdomain('haurn', get_template_directory_uri().'/language');
 	add_theme_support('title-tag');
 	add_theme_support('menus');
 	add_theme_support('post-thumbnails');
@@ -12,16 +13,28 @@ function persoanl_theme_setup(){
 	));
 
 
-	register_post_type('hero-section', array(
+	register_post_type('hero_section', array(
 		'public' => true,
 		'menu_icon' => 'dashicons-editor-expand',
-		'menu_position' => 10,
 		'description' => 'This is Hero Section Post',
 		'supports'  => array('title', 'editor', 'thumbnail'),
 		'labels' => array(
 			'name' => 'Hero Section',
 			'add_new' => 'Add New Section',
 			'add_new_item' => 'Add New Hero Section'
+		),
+	));
+
+	// About me
+	register_post_type('about_me', array(
+		'public'		=> true,
+		'menu_icon'		=> 'dashicons-admin-users',
+		'description'	=> 'About us section',
+		'supports'		=> array('title', 'editor', 'thumbnail'),
+		'labels'		=> array(
+			'name'		=> 'About Me',
+			'add_new'	=> 'Add New About',
+			'add_new_item'	=> 'Add New About Section'
 		),
 	));
 }
@@ -76,7 +89,8 @@ add_action('wp_enqueue_scripts', 'harun_enqueue_style');
 
 
 
-
+require_once(dirname(__FILE__).'/cmb2/init.php');
+require_once(dirname(__FILE__).'/cmb2/config.php');
 
 
 
