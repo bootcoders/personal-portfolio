@@ -27,6 +27,8 @@ function cmb2_meta_box(){
 		'desc'		=> 'Button Text'
 	));
 
+
+	// About Section
 	$about_me = new_cmb2_box(array(
 		'id'		=> 'about-me',
 		'title'		=> __('More Option Box', 'harun'),
@@ -50,6 +52,50 @@ function cmb2_meta_box(){
 		'name'		=> 'Button URL',
 		'type'		=> 'text_url',
 		'desc'		=> 'Add Button URL'
+	));
+
+	// Service Sections
+	$service_section = new_cmb2_box(array(
+		'id'			=> 'service_section',
+		'title'			=> 'More Options Box',
+		'object_types'	=> array('my_service'),
+
+	));
+	$service_section -> add_field(array(
+		'id'			=> 'service_icon',
+		'name'			=> 'Service Icon',
+		'type'			=> 'text',
+		'desc'			=> 'add the class name'
+	));
+
+	// portfolipo section
+	$portfolip_section = new_cmb2_box(array(
+		'id'		=> 'portfolip_section',
+		'title'		=> 'More Options Box',
+		'object_types'	=> array('portfolio')
+	));
+
+	$portfolip_section -> add_field(array(
+		'id'		=> 'port_icon',
+		'name'		=> 'Hover Iocn',
+		'type'		=> 'file',
+		'desc'		=> 'Add Icon Class'
+
+	));
+
+	$testimonial_sec = new_cmb2_box(array(
+
+		'id'		=> 'testimonial_sec',
+		'title'		=> 'More Option Box',
+		'object_types' => array('testimonial')
+	));
+
+	$testimonial_sec-> add_field(array(
+		'id'			=> 'test_degination',
+		'name'			=> 'Degination',
+		'type'			=> 'text',
+		'desc'			=> 'Add Your Dagination'
+
 	));
 }
 

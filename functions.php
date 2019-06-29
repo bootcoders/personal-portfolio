@@ -37,6 +37,65 @@ function persoanl_theme_setup(){
 			'add_new_item'	=> 'Add New About Section'
 		),
 	));
+
+	// My Service 
+	register_post_type('my_service', array(
+		'public'		=> true,
+		'menu_icon'		=> 'dashicons-list-view',
+		'supports'		=> array('title', 'editor'),
+		'labels'		=> array(
+			'name'		=> 'Our Service',
+			'add_new'	=> 'Add New Service',
+			'add_new_item'	=> 'Add New Services'
+		)
+	));
+	// Fun Facts
+	register_post_type('fun_facts', array(
+		'public'		=> true,
+		'menu_icon'		=> 'dashicons-filter',
+		'supports'		=> array('title', 'editor'),
+		'labels'		=> array(
+			'name'		=> 'Fun Facts',
+			'add_new'	=> 'Add new facts',
+			'add_new_item'	=> 'Add New Fun Fact '
+		),
+
+	));
+
+	// Portfolio
+	register_post_type('portfolio', array(
+		'public'		=> true,
+		'menu_icon'		=> 'dashicons-format-gallery',
+		'supports'		=> array('title', 'editor', 'thumbnail'),
+		'labels'		=> array(
+			'name'		=> 'Portfolio',
+			'add_new'	=> 'Add New Portfolio',
+			'add_new_item'	=> 'Add New Portfolio'
+		),	
+	));
+
+	// Testimonial Section
+	register_post_type('testimonial', array(
+		'public'		=> true,
+		'menu_icon'		=> 'dashicons-format-quote',
+		'supports'		=> array('title', 'editor', 'thumbnail'),
+		'labels'		=> array(
+			'name'		=> 'Testimonial',
+			'add_new'	=> 'Add Testimonial',
+			'add_new_item' => 'Add New Testimonial'
+		),
+	));
+	// Clients Section
+	register_post_type('client_sec', array(
+		'public'		=> true,
+		'menu_icon'		=> 'dashicons-admin-users',
+		'supports'		=> array('thumbnail'),
+		'labels'		=> array(
+			'name'		=> 'All Clients',
+			'add_new'	=> 'Add New Client',
+			'add_new_item'	=> 'Add New Client'
+		)
+	));
 }
 
 
