@@ -9,3 +9,35 @@ Text Domain : haurn
 Tags: First Website, Persoanal website, portfilo
 
 */
+
+.current_page_item  a{
+	color: #8490ff !important;
+}
+.nav-links a{
+	position: relative;
+	display: inline-block;
+	padding: 0.5rem 0.75rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #777777;
+	border: none;
+}
+.nav-links a:hover{
+	background-color: #8490ff;
+	border-color: transparent;
+	color: #fff;
+}
+.nav-links span.page-numbers{
+	position: relative;
+	display: inline-block;
+	padding: 0.5rem 0.75rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #777777;
+	border: none;
+}
+.nav-links span.page-numbers.current{
+	background-color: #8490ff;
+	border-color: transparent;
+	color: #fff;
+}

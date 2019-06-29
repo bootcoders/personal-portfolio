@@ -2,15 +2,14 @@
 
 <?php get_header(); ?>
 	
-	<?php get_template_part('template-parts/blog-banner') ?>				  
-
-	<?php get_template_part('template-parts/category') ?>
-	
-	<!-- Start post-content Area -->
-	<section class="post-content-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 posts-list">
+	<?php get_template_part('template-parts/page-header') ?>				  
+		  
+			
+<!-- Start post-content Area -->
+<section class="post-content-area single-post-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 posts-list">
 					<?php while(have_posts()) : the_post(); ?>
 						<div class="single-post row">
 							<div class="col-lg-3  col-md-3 meta-details">
@@ -47,26 +46,19 @@
 									?>
 									
 								</p>
-								<a href="<?php the_permalink(); ?>" class="primary-btn">View More</a>
+								
 							</div>
 						</div>
 					<?php endwhile; wp_reset_postdata(); ?>
 																		
-                    <nav class="blog-pagination justify-content-center d-flex">
-                    	<?php the_posts_pagination(array(
-                    			'prev_text'	=> '<span class="lnr lnr-chevron-left"></span>',
-                    			'next_text'	=> '<span class="lnr lnr-chevron-right"></span>',
-                    			'screen_reader_text' => ' ',
-
-                    	)); ?>
-                        
-                    </nav>
+                   
 				</div>
-				<?php get_sidebar(); ?>
-			</div>
-		</div>	
-	</section>
-	<!-- End post-content Area -->
+			
+			<?php get_sidebar(); ?>
+		</div>
+	</div>	
+</section>
+<!-- End post-content Area -->
 
 
 <?php get_footer(); ?>

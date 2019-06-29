@@ -146,10 +146,9 @@ function harun_enqueue_style(){
 }
 add_action('wp_enqueue_scripts', 'harun_enqueue_style');
 
-
-
 require_once(dirname(__FILE__).'/cmb2/init.php');
 require_once(dirname(__FILE__).'/cmb2/config.php');
+require_once(dirname(__FILE__).'/assests/wp-crumbs/Crumbs.php');
 
 
 
