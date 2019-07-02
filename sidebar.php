@@ -1,11 +1,15 @@
 <div class="col-lg-4 sidebar-widgets">
 	<div class="widget-wrap">
+
+		<?php dynamic_sidebar('right_sidebar') ?>
 		<div class="single-sidebar-widget search-widget">
 			<form class="search-form" action="#">
                 <input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'" >
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
 		</div>
+
+
 		<div class="single-sidebar-widget user-info-widget">
 			<img src="<?php echo get_template_directory_uri() ?>/img/blog/user-info.png" alt="">
 			<a href="#"><h4>Charlie Barber</h4></a>

@@ -5,6 +5,7 @@ function persoanl_theme_setup(){
 	load_theme_textdomain('haurn', get_template_directory_uri().'/language');
 	add_theme_support('title-tag');
 	add_theme_support('menus');
+	add_theme_support('widgets');
 	add_theme_support('post-thumbnails');
 
 
@@ -153,7 +154,37 @@ require_once(dirname(__FILE__).'/assests/wp-crumbs/Crumbs.php');
 
 
 
+function harun_widgets(){
+	register_sidebar(array(
+		'id'		=> 'right_sidebar',
+		'name'		=> 'Right Sidebar',
+		'description'	=> 'Put Here Right Sidebar Content',
+		'before_widget'	=> '<div class="single-sidebar-widget search-widget">',
+		'after_widget'		=> '</div>',
+		'before_title'		=> '<h3 class="title">',
+		'after_title'		=> '</h3>'
+	));
+}
+
+add_action('widgets_init', 'harun_widgets');
 
 
+// Shortcode
+add_filter('widget_text', 'do_shortcode');
+add_shortcode('name', 'shortcode_gen');
 
+function shortcode_gen() {
+	ob_start();
+	$show_post = new WP_Query(array(
+		'post_type'		=> 'testimonial',
+	));
+	while($show_post->have_posts()): $show_post->the_post(); ?>
 
+		<h1><?php the_title(); ?></h1>
+
+	<?php endwhile;
+
+	$var = ob_get_clean();
+
+	return $var;
+}
